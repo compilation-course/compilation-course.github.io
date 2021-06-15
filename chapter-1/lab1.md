@@ -66,7 +66,7 @@ f_0 = 1, f_1 = 1 \\
 f_{n+2} = f_{n} + f_{n+1} 
 $$
 
-```{.tiger}
+```tiger
 let
    function fibonacci(n : int) : int =
      /* ... complete here ... */
@@ -83,7 +83,7 @@ The following primitives will be useful:
 * `function getchar() : string`, reads a single character from `stdin` and returns it as string of size one. If EOF is reached, the empty string is returned.
 * `function ord(s : string) : int`, returns the ASCII code of the first character of the input string.
 
-```{.tiger}
+```tiger
 let
   /* Read a positive integer from the standard input.
      Returns -1 on error */
