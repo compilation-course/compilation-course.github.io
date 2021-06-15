@@ -116,10 +116,10 @@ The parts of the input that match will be colored.
 
 ## Automata Determinisation
 
-(5) What is the language accepted by the automaton in figure 1 ?
+(5) What is the language accepted by the automaton in the figure below?
 
 (6) Show that it is not deterministic.
 
 (7) Determinise it.
 
-![Figure 1: Automaton to determinise](determ2.png)
+![Automaton to determinise](determ2.png)
