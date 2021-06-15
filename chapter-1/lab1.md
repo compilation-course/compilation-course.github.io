@@ -59,7 +59,7 @@ but remember that in these lectures we will not use and implement array and reco
 
 (1) [`hello.tig`] Write a Tiger program, `hello.tig`, that prints the string "Hello World!" followed by a new line character to the standard output.
 
-(2) [`fibonacci.tig`] Complete the following program and save it in a `fibonacci.tig` file.  The function `fibonacci` should return the $n^{th}$ term of the Fibonacci sequence which is defined recursively as follows,
+(2) [`fibonacci.tig`] Complete the following program and save it in a `fibonacci.tig` file.  The function `fibonacci` should return the $$n^{th}$$ term of the Fibonacci sequence which is defined recursively as follows,
 
 $$ 
 f_0 = 1, f_1 = 1 \\
@@ -76,7 +76,7 @@ in
 end
 ```
 
-(3) [`read_unsigned.tig`] Complete the following program and save it in `read_unsigned.tig` file. The function `read_unsigned` reads a line from the _standard input_ (`stdin`). If the line contains only numerical characters it returns the number as a positive base-ten integer. Otherwise, it returns $-1$.
+(3) [`read_unsigned.tig`] Complete the following program and save it in `read_unsigned.tig` file. The function `read_unsigned` reads a line from the _standard input_ (`stdin`). If the line contains only numerical characters it returns the number as a positive base-ten integer. Otherwise, it returns $$-1$$.
 
 The following primitives will be useful:
 
@@ -99,11 +99,11 @@ end
 Review: Regular Expressions and Finite Automata
 -----------------------------------------------
 
-(4) Give a regular expression and an automata for each of the following languages in $\Sigma = \{a, b\}$:
+(4) Give a regular expression and an automata for each of the following languages in $$\Sigma = \{a, b\}$$:
 
-* [`regexp1.txt`] words in $\Sigma^{*}$ for which the first `a` (if it exist) precedes the first `b` (if it exists).
+* [`regexp1.txt`] words in $$\Sigma^{*}$$ for which the first `a` (if it exist) precedes the first `b` (if it exists).
 
-* [`regexp2.txt`] words in $\Sigma^{*}$ for which the number of a is even (0 is considered even).
+* [`regexp2.txt`] words in $$\Sigma^{*}$$ for which the number of a is even (0 is considered even).
 
 You will write regular expressions in the format accepted by `grep -E`.
 The two committed files will contain nothing but the regular expression.
