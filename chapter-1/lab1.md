@@ -56,12 +56,14 @@ Tiger Language
 We will familiarize ourselves with the Tiger language by writing a few programs. If in doubt check the [specifications of the Tiger language](https://www.lrde.epita.fr/~tiger/tiger.html)
 but remember that in these lectures we will not use and implement array and record types.
 
-1. [`hello.tig`] Write a Tiger program, `hello.tig`, that prints the string "Hello World!" followed by a new line character to the standard output.
+(1) [`hello.tig`] Write a Tiger program, `hello.tig`, that prints the string "Hello World!" followed by a new line character to the standard output.
 
-2. [`fibonacci.tig`] Complete the following program and save it in a `fibonacci.tig` file.  The function `fibonacci` should return the $n^{th}$ term of the Fibonacci sequence which is defined recursively as follows,
+(2) [`fibonacci.tig`] Complete the following program and save it in a `fibonacci.tig` file.  The function `fibonacci` should return the $n^{th}$ term of the Fibonacci sequence which is defined recursively as follows,
 
-$$ f_0 = 1, f_1 = 1 \\
-   f_{n+2} = f_{n} + f_{n+1} $$
+$$ 
+f_0 = 1, f_1 = 1 \\
+f_{n+2} = f_{n} + f_{n+1} 
+$$
 
 ```{.tiger}
 let
@@ -73,7 +75,7 @@ in
 end
 ```
 
-3. [`read_unsigned.tig`] Complete the following program and save it in `read_unsigned.tig` file. The function `read_unsigned` reads a line from the _standard input_ (`stdin`). If the line contains only numerical characters it returns the number as a positive base-ten integer. Otherwise, it returns $-1$.
+(3) [`read_unsigned.tig`] Complete the following program and save it in `read_unsigned.tig` file. The function `read_unsigned` reads a line from the _standard input_ (`stdin`). If the line contains only numerical characters it returns the number as a positive base-ten integer. Otherwise, it returns $-1$.
 
 The following primitives will be useful:
 
@@ -96,7 +98,7 @@ end
 Review: Regular Expressions and Finite Automata
 -----------------------------------------------
 
-3. Give a regular expression and an automata for each of the following languages in $\Sigma = \{a, b\}$:
+(4) Give a regular expression and an automata for each of the following languages in $\Sigma = \{a, b\}$:
 
 * [`regexp1.txt`] words in $\Sigma^{*}$ for which the first `a` (if it exist) precedes the first `b` (if it exists).
 
@@ -114,8 +116,8 @@ The parts of the input that match will be colored.
 
 ## Automata Determinisation
 
-4. What is the language accepted by the automaton in figure 1 ?
-5. Show that it is not deterministic.
-6. Determinise it.
+(5) What is the language accepted by the automaton in figure 1 ?
+(6) Show that it is not deterministic.
+(7) Determinise it.
 
 ![Figure 1: Automaton to determinise](determ2.png){width=40%}
