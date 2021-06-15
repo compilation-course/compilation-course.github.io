@@ -9,4 +9,4 @@ nav_order: 2
 
 <iframe width="873" height="654" src="https://www.youtube-nocookie.com/embed/sDLTsroe85E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[Introduction slides](1-introduction.pdf)
+[Get the slides](1-introduction.pdf){: .btn }
