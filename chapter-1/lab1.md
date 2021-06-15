@@ -6,8 +6,9 @@ mathjax: true
 nav_order: 3
 ---
 
-Setup
------
+# Lab 1 - Tiger Language
+
+## Setup
 
 Before starting this lab, please create a new directory `lab1/` in your git repository. 
 Execute the following commands at the top of your repository:
@@ -51,8 +52,7 @@ meaningful message and push your changes.
 Ensure that you commit everything and follow precisely the instructions. This lab
 is graded and machine corrected !
 
-Tiger Language
---------------
+## Tiger Language
 
 We will familiarize ourselves with the Tiger language by writing a few programs. If in doubt check the [specifications of the Tiger language](https://www.lrde.epita.fr/~tiger/tiger.html)
 but remember that in these lectures we will not use and implement array and record types.
@@ -66,7 +66,7 @@ f_0 = 1, f_1 = 1 \\
 f_{n+2} = f_{n} + f_{n+1} 
 $$
 
-```tiger
+```
 let
    function fibonacci(n : int) : int =
      /* ... complete here ... */
@@ -83,7 +83,7 @@ The following primitives will be useful:
 * `function getchar() : string`, reads a single character from `stdin` and returns it as string of size one. If EOF is reached, the empty string is returned.
 * `function ord(s : string) : int`, returns the ASCII code of the first character of the input string.
 
-```tiger
+```
 let
   /* Read a positive integer from the standard input.
      Returns -1 on error */
@@ -96,8 +96,7 @@ in
 end
 ```
 
-Review: Regular Expressions and Finite Automata
------------------------------------------------
+## Regular Expressions and Finite Automata
 
 (4) Give a regular expression and an automata for each of the following languages in $$\Sigma = \{a, b\}$$:
 
@@ -118,7 +117,9 @@ The parts of the input that match will be colored.
 ## Automata Determinisation
 
 (5) What is the language accepted by the automaton in figure 1 ?
+
 (6) Show that it is not deterministic.
+
 (7) Determinise it.
 
-![Figure 1: Automaton to determinise](determ2.png){width=40%}
+![Figure 1: Automaton to determinise](determ2.png)
