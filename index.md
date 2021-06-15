@@ -1,4 +1,10 @@
-# About This Course
+---
+layout: default
+title: About this Compiler Course
+nav_order: 1
+---
+
+# About this Compiler Course
 
 In this course you will learn how to build a compiler. A compiler takes a source language as input and produces an binary that can be directly executed by the computer's hardware. The course is divided into the following five topics:
 
