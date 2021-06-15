@@ -2,6 +2,7 @@
 title: Lab 1 - Tiger Language
 layout: default
 parent: Introduction
+mathjax: true
 nav_order: 3
 ---
 
