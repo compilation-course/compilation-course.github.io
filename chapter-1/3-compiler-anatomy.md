@@ -1,0 +1,7 @@
+# Compiler Anatomy
+
+<iframe width="896" height="504" src="https://www.youtube-nocookie.com/embed/VBvnw7jWWk8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+[Compiler anatomy slides](3-compiler-anatomy.pdf) 
+
+

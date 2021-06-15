@@ -1,5 +1,5 @@
-# Introduction to the compiler course
+## Introduction to the compiler course
 
-<iframe src="https://www.youtube.com/embed/sDLTsroe85E?cc_lang_pref=fr&cc=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="873" height="654" frameborder="0"></iframe>
+<iframe width="896" height="504" src="https://www.youtube-nocookie.com/embed/sDLTsroe85E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[Download the slides.](1-introduction.pdf)
+- [Introduction slides](1-introduction.pdf)
