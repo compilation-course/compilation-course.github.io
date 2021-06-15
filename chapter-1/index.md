@@ -7,6 +7,6 @@ has_children: true
 
 # Introduction to the compiler course
 
-## Other Ressources
+## Bibliographic Ressources
 
 - [Full specifications of the Tiger language](https://www.lrde.epita.fr/~tiger/tiger.html)

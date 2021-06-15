@@ -56,15 +56,9 @@ Tiger Language
 We will familiarize ourselves with the Tiger language by writing a few programs. If in doubt check the [specifications of the Tiger language](https://www.lrde.epita.fr/~tiger/tiger.html)
 but remember that in these lectures we will not use and implement array and record types.
 
-(@) [`hello.tig`] Write a Tiger program, `hello.tig`, that prints the string "Hello World!" followed by a new line character to the standard output.
+1. [`hello.tig`] Write a Tiger program, `hello.tig`, that prints the string "Hello World!" followed by a new line character to the standard output.
 
-!comment(correction)(
-```{.tiger #correction}
-print("Hello World!\n")
-```
-)
-
-(@) [`fibonacci.tig`] Complete the following program and save it in a `fibonacci.tig` file.  The function `fibonacci` should return the $n^{th}$ term of the Fibonacci sequence which is defined recursively as follows,
+2. [`fibonacci.tig`] Complete the following program and save it in a `fibonacci.tig` file.  The function `fibonacci` should return the $n^{th}$ term of the Fibonacci sequence which is defined recursively as follows,
 
 $$ f_0 = 1, f_1 = 1 \\
    f_{n+2} = f_{n} + f_{n+1} $$
@@ -79,19 +73,7 @@ in
 end
 ```
 
-!comment(correction)(
-```{.tiger}
-let
-   function fibonacci(n : int) : int =
-     if n < 2 then 1 else fibonacci(n-1) + fibonacci(n-2)
-in
-   for i := 1 to 8 do
-     (print_int(fibonacci(i)); print("\n"))
-end
-```
-)
-
-(@) [`read_unsigned.tig`] Complete the following program and save it in `read_unsigned.tig` file. The function `read_unsigned` reads a line from the _standard input_ (`stdin`). If the line contains only numerical characters it returns the number as a positive base-ten integer. Otherwise, it returns $-1$.
+3. [`read_unsigned.tig`] Complete the following program and save it in `read_unsigned.tig` file. The function `read_unsigned` reads a line from the _standard input_ (`stdin`). If the line contains only numerical characters it returns the number as a positive base-ten integer. Otherwise, it returns $-1$.
 
 The following primitives will be useful:
 
@@ -111,52 +93,14 @@ in
 end
 ```
 
-!comment(correction)(
-```{.tiger}
-let
-  /* Read a positive integer from the standard input.
-     Returns -1 on error */
-  function read_unsigned() : int =
-    let
-      var char : int := 0
-      var num : int := 0
-      var empty : int := 1
-    in
-      while 1 do
-        (char := ord(getchar());
-        if char = 10 then
-          (num := if empty then -1 else num; break)
-        else
-          if char >= 48 & char < 58 then
-            (empty := 0; num := num * 10 + char - 48)
-          else
-            (num := -1; break));
-      num
-    end
-  var a : int := read_unsigned()
-in
-  print_int(a*2);
-  print("\n")
-end
-```
-)
-
 Review: Regular Expressions and Finite Automata
 -----------------------------------------------
 
-(@) Give a regular expression and an automata for each of the following languages in $\Sigma = \{a, b\}$:
+3. Give a regular expression and an automata for each of the following languages in $\Sigma = \{a, b\}$:
 
 * [`regexp1.txt`] words in $\Sigma^{*}$ for which the first `a` (if it exist) precedes the first `b` (if it exists).
 
-!comment(correction)(
-    a[ab]* | b*
-)
-
 * [`regexp2.txt`] words in $\Sigma^{*}$ for which the number of a is even (0 is considered even).
-
-!comment(correction)(
-    b*(ab*ab*)*
-)
 
 You will write regular expressions in the format accepted by `grep -E`.
 The two committed files will contain nothing but the regular expression.
@@ -170,11 +114,8 @@ The parts of the input that match will be colored.
 
 ## Automata Determinisation
 
-(@) What is the language accepted by the automaton in figure 1 ?
-(@) Show that it is not deterministic.
-(@) Determinise it.
+4. What is the language accepted by the automaton in figure 1 ?
+5. Show that it is not deterministic.
+6. Determinise it.
 
 ![Figure 1: Automaton to determinise](determ2.png){width=40%}
-
-
-
