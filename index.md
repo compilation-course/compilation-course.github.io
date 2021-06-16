@@ -24,3 +24,16 @@ During lab hours, you will work on computer assignments in which you will develo
 
 Students are expected to have good programming skills in C and a basic knowledge of C++. Students should also understand the general concepts of computer architectures and operating systems; in particular they should known how the CPU executes assembly programs and how the memory is organized.
 
+# Authors
+
+This course was co-authored by [Samuel Tardieu](https://rfc1149.net/) at
+Télécom Paris-Tech and [Pablo de Oliveira Castro](https://sifflez.org/) at
+Université Paris-Saclay - UVSQ.
+
+We are grateful to Andrew W. Appel for his excellent book series [_Modern
+Compiler implementation_](https://www.cs.princeton.edu/~appel/modern/) on which
+this course was inspired.
+
+We'd also like to thanks Akim Demaille and the LRDE team for the excellent
+[Tiger reference manual](https://www.lrde.epita.fr/~tiger/tiger.html) and for
+making freely available their compiler course.
