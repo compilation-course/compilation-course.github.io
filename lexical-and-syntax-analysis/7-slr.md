@@ -2,6 +2,7 @@
 layout: default
 title: Introduction to SLR(1) Parsers
 parent: Lexical and syntax analysis 
+mathjax: true
 nav_order: 3
 ---
 

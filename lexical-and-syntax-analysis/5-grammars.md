@@ -2,6 +2,7 @@
 layout: default
 title: Context Free Grammars
 parent: Lexical and syntax analysis 
+mathjax: true
 nav_order: 3
 ---
 
