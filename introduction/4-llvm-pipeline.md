@@ -1,9 +1,7 @@
 ---
-layout: default
-title: LLVM Pipeline 
+layout: video 
+title: Example of the LLVM Pipeline 
+ytid: i3jjbfr1wzQ
 parent: Introduction 
 nav_order: 2
 ---
-# Interactive example of the LLVM compilation pipeline
-
-<iframe width="873" height="654" src="https://www.youtube-nocookie.com/embed/i3jjbfr1wzQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
