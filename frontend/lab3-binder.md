@@ -4,6 +4,7 @@ parent: Frontend
 title: Lab 3 - Binder
 nav_order: 4
 ---
+# Lab 3 - Binder
 
 In this lab we will write a Binder for our Tiger compiler.
 The Binder is responsible for the following tasks:

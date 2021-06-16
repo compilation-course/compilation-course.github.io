@@ -4,6 +4,7 @@ title: Lab 4 - IR generation
 parent: Intermediate Representation 
 nav_order: 5
 ---
+# Lab 4 - IR generation
 
 In this lab we will write a code generator for our Tiger
 compiler targeting LLVM IR.

@@ -4,6 +4,7 @@ parent: Frontend
 title: Lab 3 (second part) - Type checker
 nav_order: 4
 ---
+# Lab 3 (second part) - Type checker
 
 In this lab we will write a type checker for our tiger compiler.
 The type checker is responsible for the following tasks:
