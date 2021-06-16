@@ -46,7 +46,7 @@ SLR(1) belongs to the family of bottom-up parsers: that means that it builds a
 parse tree starting from the leafs and tries to reach the root start symbol.
 Because SLR is a bottom-up parse, it will use grammar rules on the other
 direction since it begins from the final word and tries to build the derivation
-backwards towards $S$.
+backwards towards $$S$$.
 
 SLR(1) stands for **S**imple **L**eft-to-right **R**ightmost-derivation Parser with 1 symbol lookahead.
 Let's unpack that:
@@ -68,13 +68,13 @@ After a shift or reduce, we will transition to a new state.
 ***
 **Example**
 
-Consider $G_3$, with $V=\{S, E\}$ and $\Sigma=\{id,\#\}$, with rules
+Consider $$G_3$$, with $$V=\{S, E\}$$ and $$\Sigma=\{id,\#\}$$, with rules
 
-0. $S \rightarrow E\#$
-1. $E \rightarrow id\ E$
-2. $E \rightarrow id$
+0. $$S \rightarrow E\#$$
+1. $$E \rightarrow id\ E$$
+2. $$E \rightarrow id$$
 
-This grammar can parse words like $id\ id\#$ which belong to $L(G_3)$.
+This grammar can parse words like $$id\ id\#$$ which belong to $$L(G_3)$$.
 
 The automata is represented by the following table,
 
@@ -90,7 +90,7 @@ The first column, contains the states of the automaton. The initial state is 0.
 The first line, contains the different symbols (terminals and non terminals).
 Each cell in the table, describes the actions to take.
 
-Let us show how this SLR(1) would parse input $id\ id\#$.
+Let us show how this SLR(1) would parse input $$id\ id\#$$.
 Initially, the input contains the word to parse and the stack contains the initial state (state 0). 
 
 ~~~
@@ -101,7 +101,7 @@ input = [id id #]
 stack = [0]
 ~~~
 
-To know which action to take, we look to the state that is on top of the stack (here 0) and we look at the first symbol in input (here $id$). The above parse table, shows $s1$ for $(0,id)$; this means we will shift and move to the state 1.
+To know which action to take, we look to the state that is on top of the stack (here 0) and we look at the first symbol in input (here $$id$$). The above parse table, shows $$s1$$ for $$(0,id)$$; this means we will shift and move to the state 1.
 
 Shifting means that we take the first symbol in the input and push it on the stack.
 Then we push the new state (here 1) to the stack
@@ -114,7 +114,7 @@ input = [id #]
 stack = [0 id 1]
 ~~~
 
-Now we look at the table for state 1 and symbol $id$, the action is again to shift and move to state 1.
+Now we look at the table for state 1 and symbol $$id$$, the action is again to shift and move to state 1.
 
 ~~~
 Step 2:
@@ -124,9 +124,9 @@ input = [#]
 stack = [0 id 1 id 1]
 ~~~
 
-Here we look at the table for state 1 and symbol $\#$, the action is r2. This means to reduce by grammar rule 2.
+Here we look at the table for state 1 and symbol $$\#$$, the action is r2. This means to reduce by grammar rule 2.
 
-Grammar rule 2 is $E \rightarrow id$, we therefore remove the right-hand-side ($id$) from the stack and associated states; and replace it by the left-hand-side ($E$). Remember that in this bottom-up-parser we reverse grammar rules. 
+Grammar rule 2 is $$E \rightarrow id$$, we therefore remove the right-hand-side ($$id$$) from the stack and associated states; and replace it by the left-hand-side ($$E$$). Remember that in this bottom-up-parser we reverse grammar rules. 
 
 ~~~
 stack = [0 id 1 id 1]
@@ -137,7 +137,7 @@ stack = [0 id 1 E]
               ^ ^   
 ~~~
 
-After this replacement, we look at the top of the stack and read state and symbol, here $1\ E$. The table tells us that when we reduce to $E$ in state 1, we should move to state 3.
+After this replacement, we look at the top of the stack and read state and symbol, here $$1\ E$$. The table tells us that when we reduce to $$E$$ in state 1, we should move to state 3.
 
 ~~~
 Step 3:
@@ -147,8 +147,8 @@ input = [#]
 stack = [0 id 1 E 3]
 ~~~
 
-Here we look at the table for state 3 and symbol $\#$, the action is r1.
-Now we reduce by grammar rule 1, which is $E \rightarrow id\ E$.
+Here we look at the table for state 3 and symbol $$\#$$, the action is r1.
+Now we reduce by grammar rule 1, which is $$E \rightarrow id\ E$$.
 We replace the right-hand-side by the left-hand-side.
 
 ~~~
@@ -160,7 +160,7 @@ stack = [0 E]
          ^ ^   
 ~~~
 
-The table tells us that a reduction to $E$ on state 0, transition the automaton
+The table tells us that a reduction to $$E$$ on state 0, transition the automaton
 to state 2.
 
 ~~~
@@ -171,7 +171,7 @@ input = [#]
 stack = [0 E 2]
 ~~~
 
-The table tells us that for state 2 and symbol $\#$ we should shift to state 4,
+The table tells us that for state 2 and symbol $$\#$$ we should shift to state 4,
 which accepts the word !
 
 ***
