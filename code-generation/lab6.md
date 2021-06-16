@@ -17,19 +17,13 @@ Retrieve the lab code and commit it to your git with the following commands,
 ```bash
 $ mkdir lab6
 $ cd lab6
-!ifeq(!INSTITUTE)(TELECOM)(
 $ curl <some link, see below> | tar zxvf -
-)!ifeq(!INSTITUTE)(UVSQ)(
-$ wget -qO- www.sifflez.org/lectures/compil/lab6/dragon-tiger.tar.gz | tar zxv
 )
 $ git add -f dragon-tiger/
 $ git commit -m "Import dragon-tiger for lab6"
 ```
 
-!ifeq(!INSTITUTE)(TELECOM)(
-The link to use depends on your operating system. Visit [this page](https://rfc1149.net/tmp/lab6/)
-for more information.
-)
+The link to use depends on your operating system. Visit [this page](https://rfc1149.net/tmp/lab6/) for more information.
 
 Now let us build the project,
 
