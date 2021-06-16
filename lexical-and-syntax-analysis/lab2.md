@@ -240,7 +240,7 @@ To simplify subsequent phases in the compiler, boolean operators are
 translated to an `IfThenElse` AST node.  Indeed, due to Tiger's lazy evaluation
 of boolean operators, `a & b` is semantically equivalent to the following code,
 
-```tiger
+```
 if (a) then (if (b) then 1 else 0) else 0 
 ```
 
@@ -258,14 +258,14 @@ Adding support for `if then else` constructs
 
 To simplify subsequent phases in the compiler, when you find a naked 
 
-```tiger
+```
 if condition then
     body
 ``` 
 
 block replace it by the following equivalent construct,
 
-```tiger
+```
 if condition then
     body
 else
