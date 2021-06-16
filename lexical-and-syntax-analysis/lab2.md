@@ -23,11 +23,7 @@ Execute the following commands at the top of your repository:
 ```bash
 $ mkdir lab2
 $ cd lab2
-!ifeq(!INSTITUTE)(TELECOM)(
-$ curl https://rfc1149.net/tmp/lab2/dragon-tiger.tar.gz | tar zxvf -
-)!ifeq(!INSTITUTE)(UVSQ)(
 $ wget -qO- www.sifflez.org/lectures/compil/lab2/dragon-tiger.tar.gz | tar zxv
-)
 $ git add dragon-tiger
 $ git commit -m "Import dragon-tiger for lab2" dragon-tiger
 ```
@@ -167,26 +163,6 @@ AST will contain 10,000 identical references to it instead of pointing onto
 10,000 different copies.
 
 
-!ifeq(!INSTITUTE)(UVSQEXTRA)(
-Supporting Nested Comments
---------------------------
-
-The lexer currently does not recognize Tiger comments. 
-
-(@) Implement support for Tiger comments. Remember that Tiger comments can be
-nested. As shown in the lectures, nested comments cannot be recognized with a
-standard regular expression. You should use a sub-automaton state. You can have
-a look at the lectures slides and at the code handling strings in the lexer for
-inspiration.
-
-After implementing this, the following should work
-
-```bash
-echo "/* first level /* second level */ */ 1" | src/driver/dtiger --dump-ast -
-1
-```
-)
-
 Adding support for more binary operators and adding precedence rules
 --------------------------------------------------------------------
 
@@ -301,36 +277,6 @@ The `()` corresponds to a `Sequence` AST node with an empty expression vector.
 Be careful to fix any shift/reduce or reduce/reduce conflicts you may introduce. Do not forget
 to declare the type of the new expression you created and to add it to the list of acceptable
 expressions.
-
-!ifeq(!INSTITUTE)(UVSQEXTRA)(
-Adding support for `let in end` and Sequence constructs
--------------------------------------------------------
-
-In Tiger you can have a sequence of expression inside a `let` block or inside a `()` sequence. Here are some examples,
-
-```tiger
-let var a := 0 in 
-    a := a + 1;
-    a := a * 10;
-    print_int(a)
-end
-```
-
-```
-(print("my age is "); print_int(21*2))
-```
-
-Both can have a list of zero or more expressions separated by semicolons (;). 
-
-The `let` block expects a list of declarations between the `let` and the `in`.
-This is already handled in the parser through the `decls` rule. You should reuse it.
-
-(@) Implement support for `sequences` and `let` blocks in the parser. To handle
-a possibly unbounded list of expressions you can have a look at how the list of
-arguments in a function call is handled.
-
-To factorize the design the `Let` AST node takes a `Sequence` member. 
-)
 
 Implementing an AST evaluator for simple Tiger int expressions
 --------------------------------------------------------------
