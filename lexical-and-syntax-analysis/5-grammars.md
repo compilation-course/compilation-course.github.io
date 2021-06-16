@@ -23,7 +23,10 @@ More formally, this can be proved by contradiction with the _pumping lemma (Lemm
 ***
 **Proof**
 
-Suppose $$L_{ab}$$ is regular. The _pumping lemma_ tells us that there is a $$n \geq 1$$ such that every string $$w \in L_{ab}$$ with $$|w| \geq n$$ can be written as $$w = xyz$$ satisfying
+Suppose $$L_{ab}$$ is regular. 
+
+The _pumping lemma_ tells us that there is a $$n \geq 1$$ such that every string 
+$$w \in L_{ab}$$ with $$|w| \geq n$$ can be written as $$w = xyz$$ satisfying
 
 - $$|y| \geq 1$$
 - $$|xy| \leq n$$
