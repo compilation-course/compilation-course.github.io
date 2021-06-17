@@ -174,14 +174,14 @@ easier. For example, it can move the insertion point to the end of another
 basic block, it can generate a branch instruction to another block, or
 generate a conditional branch instruction to another block, etc.
 
-(@) Read carefully the provided code and make sure you understand
+▶ Read carefully the provided code and make sure you understand
 how the visitor for the `Sequence` AST node works, both for a non-empty and
 an empty sequence.
 
 Variables
 ---------
 
-(@) Using utility methods declared in `irgen.hh`, implement the visitor
+▶ Using utility methods declared in `irgen.hh`, implement the visitor
     for `VarDecl` nodes. Do not forget to initialize the variable content
     with its initial value if it has one. Look at the IRBuilder provided
     utility to store the initial value at the right address. Also, the
@@ -215,7 +215,7 @@ onto the stack (whose address is stored into `%a`) in the entry
 block of the main function. In the body, the initial value `1`
 is stored at address `%a`.
 
-(@) Implement the visitor for `Identifier` nodes.
+▶ Implement the visitor for `Identifier` nodes.
 
 The following code
 
@@ -233,7 +233,7 @@ should now also contain something like:
 showing that the value stored at `%a` has been read into `%0`
 and then passed to function `print_int`.
 
-(@) Implement the visitor for `Assign` nodes.
+▶ Implement the visitor for `Assign` nodes.
 
 The following code
 
@@ -316,7 +316,7 @@ There is one pitfall however: if the `if …` expression is of type `void`,
   written to or read from (and `nullptr`
   must be returned by `visit`).
 
-(@) Implement the visitor for `IfThenElse` AST nodes.
+▶ Implement the visitor for `IfThenElse` AST nodes.
 
 Do not forget to test your implementation using tests with
 and without `else`, and tests returning either a value or
@@ -325,10 +325,10 @@ nothing.
 Loops
 -----
 
-(@) Implement the visitor for `WhileLoop` without taking care
+▶ Implement the visitor for `WhileLoop` without taking care
     of Tiger `break` statements at this time.
 
-(@) Implement the visitor for `Break`. You need to use modify
+▶ Implement the visitor for `Break`. You need to use modify
     the `WhileLoop` and `ForLoop` visitors in order to
     associate the loop AST nodes with their exit blocks
     using the `loop_exit_bbs` map.

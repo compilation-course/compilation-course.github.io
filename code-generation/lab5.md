@@ -20,7 +20,7 @@ its presence is required.
 Frame creation
 --------------
 
-(@) Add a new `void IRGenerator::generate_frame()` method which will
+▶ Add a new `void IRGenerator::generate_frame()` method which will
 be called when analyzing a `FunDecl` (in `irgen.cc`). The steps are:
 
 - Build a vector of the types needed in the frame. If the function has a parent,
@@ -48,7 +48,7 @@ Also, make sure that you to not attempt to create a field for any escaping
 Finding the right frame
 -----------------------
 
-(@) Add a new `std::pair<llvm::StructType *, llvm::Value *> IRGenerator::frame_up(int levels)`
+▶ Add a new `std::pair<llvm::StructType *, llvm::Value *> IRGenerator::frame_up(int levels)`
 method (in `irgen.cc`) which returns either the current frame information (if `levels` is 0)
 or the information of one or several levels above (if `levels` is not 0). The returned pair
 contains the frame type and an expression to be able to access it.
@@ -69,7 +69,7 @@ A way to do it would be:
 Frame assignment
 ----------------
 
-(@) It is now time to put escaping variables into the frame. You will
+▶ It is now time to put escaping variables into the frame. You will
 create a new `llvm::Value *IRGenerator::generate_vardecl(const VarDecl &decl)`
 method (in `irgen.cc`) which will take care of allocating the variable
 either in the frame (if it escapes) or in the stack (if it doesn't escape)
@@ -103,7 +103,7 @@ them and the static link) are stored into the frame.
 Find the variable address
 -------------------------
 
-(@) Since a variable may have been created in an outer frame, we must
+▶ Since a variable may have been created in an outer frame, we must
     use `frame_up` to find its address. Modify `IRGenerator::address_of()`
     in order to:
 
@@ -118,7 +118,7 @@ visitor for `Identifier` and `Assign`.
 Passing the static link
 -----------------------
 
-(@) We now must pass the static link to every function which isn't external (primitives
+▶ We now must pass the static link to every function which isn't external (primitives
 don't need the static link). To do so, we need to do several things:
 
 - Modify the `FunCall` visitor in order to pass the static link to non-external functions as

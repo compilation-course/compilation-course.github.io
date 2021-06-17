@@ -101,7 +101,7 @@ anything relevant.
 A starting stub is provided for the Binder and it can be found at
 `src/ast/binder.[hh,cc]`.
 
-(@) Read carefully the provided code and ensure that you understand
+▶ Read carefully the provided code and ensure that you understand
 which method is wrapping the program inside a main function as shown below,
 
 ```bash
@@ -113,10 +113,10 @@ function main(): int =
   )
 ```
 
-(@) Why is it necessary to call the function `enter_primitive` in the Binder's constructor? Do you
+▶ Why is it necessary to call the function `enter_primitive` in the Binder's constructor? Do you
 understand how they are not part of the tree, but they can be referenced by it?
 
-(@) Read and make sure you understand the methods `current_scope`,
+▶ Read and make sure you understand the methods `current_scope`,
 `push_scope`, `pop_scope`, `enter` and `find`. 
 
 Binding Variable Declarations
@@ -150,11 +150,11 @@ declared at line 1 columns 5-7 (location points to the var keyword).
 
 Currently, your binder does nothing. 
 
-(@) Add support for binding each variable usage to its declaration.  To bind a
+▶ Add support for binding each variable usage to its declaration.  To bind a
 variable identifier `id` to its declaration `decl` you shall use the method
 `id.set_decl(decl);`. Your binder must adhere to the _scoping rules_ of Tiger.
 
-(@) Ensure you detect the following illegal cases:
+▶ Ensure you detect the following illegal cases:
 
 * An identifier is used but not declared
 
@@ -171,7 +171,7 @@ also be properly bound by your code.
 Binding Function Declarations
 -----------------------------
 
-(@) Add support for binding each function call to its declaration. Remember that in
+▶ Add support for binding each function call to its declaration. Remember that in
 Tiger, a set of consecutive function declarations can be mutually referencing.
 
 For example the following Tiger program,
@@ -214,7 +214,7 @@ function main(): int =
 
 Declarations nodes for the primitive functions (such as `print_int`) have already been inserted in the top-level scope. They require no special handling. In the verbose AST dump, they are marked with a no-location `/*decl:<none>:0.0*/`.
 
-(@) Make sure that the error handling code also works for function calls and declarations.
+▶ Make sure that the error handling code also works for function calls and declarations.
 
 Remember to test your implementation in corner cases and complex scenarios.
 
@@ -228,9 +228,9 @@ The depth is the number of nesting function levels. For example a top-level
 declaration has depth 0. A declaration that lives inside a top-level function
 has depth 1. A declaration inside a doubly nested function has depth 2.
 
-(@) Implement depth computation and decoration in your Binder. To decorate a node `n` with its depth `d`, you shall use `n.set_depth(d);`.
+▶ Implement depth computation and decoration in your Binder. To decorate a node `n` with its depth `d`, you shall use `n.set_depth(d);`.
 
-(@) All variables declarations that are accessed from a different depth should be marked as _escaping_. To mark a declaration `d` as escaping, you shall use `d.set_escapes()`.
+▶ All variables declarations that are accessed from a different depth should be marked as _escaping_. To mark a declaration `d` as escaping, you shall use `d.set_escapes()`.
 
 The AST verbose dump shows non-null depth differences between a declaration and its use;
 it also shows escaping variables with `/*e*/`.
@@ -268,9 +268,9 @@ Each `break` statement should be decorated with its parent loop. To do so you sh
 function `break.set_loop(loop)`; where `loop` is of class `Loop` (either a
 `ForLoop` or a `WhileLoop`).
 
-(@) Decorate each break with its parent loop. To achieve this you may use a class member variable to record the visited loops.
+▶ Decorate each break with its parent loop. To achieve this you may use a class member variable to record the visited loops.
 
-(@) Ensure that you raise an error if a break is used outside of a loop or directly inside the declaration part of a Let block.
+▶ Ensure that you raise an error if a break is used outside of a loop or directly inside the declaration part of a Let block.
 
 For example, the tiger program `while(1) do break` emits the following verbose AST dump,
 

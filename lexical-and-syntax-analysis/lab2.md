@@ -118,11 +118,11 @@ $ echo "1*2" | src/driver/dtiger --dump-ast --trace-lexer -
 
 Can you understand what is happening? Look for the string "invalid character" in the lexer file `src/parser/tiger_lexer.ll`. It looks like someone forgot to add a rule to recognize integers.
 
-(@) First add an `INT` token in the parser. Look at `src/parser/tiger_parser.yy` after the comment starting with "Define tokens". The type of the token should be `int`, its name `INT`, and its comment `integer`.
-(@) Add support for recognizing integers in the lexer. You should look at how this is implemented for `ID` tokens. First, add a rule for a regular expression matching integers. No need to worry about the minus sign; it is already handled in the parser.
+▶ First add an `INT` token in the parser. Look at `src/parser/tiger_parser.yy` after the comment starting with "Define tokens". The type of the token should be `int`, its name `INT`, and its comment `integer`.
+▶ Add support for recognizing integers in the lexer. You should look at how this is implemented for `ID` tokens. First, add a rule for a regular expression matching integers. No need to worry about the minus sign; it is already handled in the parser.
 In the `flex` action for integers, use the function `strtol` to convert the matched text (`yytext`) to an integer and emit an `INT` token.
 You should ensure that the parsed integer is in the range of legal Tiger integers (the constant `TIGER_INT_MAX` has been defined for you), and signal a correctly placed error using `utils::error` if not.
-(@) Ensure that you reject numbers with leading 0 as the Tiger language forbids them (but you must accept 0 of course).
+▶ Ensure that you reject numbers with leading 0 as the Tiger language forbids them (but you must accept 0 of course).
 
 Now the lexer should recognize integers,
 
@@ -138,7 +138,7 @@ Next token is token "int" (1.1: )
 
 but the parser still complains because integers are not valid expressions.
 
-(@) Add support for integer expressions in the parser. You should add a new
+▶ Add support for integer expressions in the parser. You should add a new
 rule that matches an INT token and returns an AST Node of type
 `IntegerLiteral`. For this, you need to perform three steps: add an `intExpr`
 rule doing the matching and returning a new `IntegerLiteral` node, declare
@@ -230,7 +230,7 @@ It means that `FUNCTION`, `VAR`, and so on are not associative. It also means th
 
 As an example, `+` should be associative left, and have a precedence lower ("be declared before") than the unary minus, because you want `-4+5` to be parsed as `(-4)+5`, not as `-(4+5)`.
 
-(@) Add precedence rules until you fix all the shift/reduce and reduce/reduce conflicts in the parser. 
+▶ Add precedence rules until you fix all the shift/reduce and reduce/reduce conflicts in the parser. 
 Check that you correctly parse arithmetic expressions such as `1+2*3`, `5-2-1` or `-4+5`.
 
 Adding support for the boolean OR operator
@@ -245,16 +245,16 @@ if (a) then (if (b) then 1 else 0) else 0
 ```
 
 
-(@) Add support for `|` (OR) boolean operator in the parser. Do not produce a
+▶ Add support for `|` (OR) boolean operator in the parser. Do not produce a
 `BinaryOperator` node, use an `IfThenElse` node with a construction similar to
 the one used by the `&` (AND) operator. 
 
-(@) Test that your compiler recognizes the new constructs.
+▶ Test that your compiler recognizes the new constructs.
 
 Adding support for `if then else` constructs
 --------------------------------------------
 
-(@) Add support for `if then else` and `if then` constructs to the lexer and parser.
+▶ Add support for `if then else` and `if then` constructs to the lexer and parser.
 
 To simplify subsequent phases in the compiler, when you find a naked 
 
@@ -313,4 +313,4 @@ The evaluator should reside in the `src/ast` directory in the `ast`
 namespace and extend the class `ConstASTIntVisitor`.
 
 
-(@) Implement the Evaluator as described above.
+▶ Implement the Evaluator as described above.

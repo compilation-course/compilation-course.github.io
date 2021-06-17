@@ -111,7 +111,7 @@ output of our Tiger compiler. Since we are using a POSIX system (interfaces with
 the operating system are well-defined), we will create a runtime which works on
 any POSIX system in directory `src/runtime/posix`.
 
-(@) In `src/runtime/posix/runtime.h`, look at the various prototypes of the functions
+▶ In `src/runtime/posix/runtime.h`, look at the various prototypes of the functions
 you will have to implement. We chose to implement the runtime in C because the
 C programming language allows to write code whose binary representation drags
 less dependencies than C++ and are found everywhere. Since this is a "toy" compiler,
@@ -152,6 +152,6 @@ Don't hesitate to read `compile` and look at the various arguments used if you w
 Implement the runtime
 ---------------------
 
-(@) Implement the runtime in file `src/runtime/posix/runtime.c`. You might want to do it in the order described in the header file to get the best out of the automated tests.
+▶ Implement the runtime in file `src/runtime/posix/runtime.c`. You might want to do it in the order described in the header file to get the best out of the automated tests.
 
 If you want, you might implement another runtime for other systems (such as an Arm-based microcontroller), but you will have to interact with the environment using, for example, the semihosting capabilities which let you exchange data with a monitor program.
