@@ -22,7 +22,7 @@ During lab hours, you will work on computer assignments in which you will develo
 
 # Requirements
 
-Students are expected to have good programming skills in C and a basic knowledge of C++. Students should also understand the general concepts of computer architectures and operating systems; in particular they should known how the CPU executes assembly programs and how the memory is organized.
+Students are expected to have good programming skills in C and a basic knowledge of C++. Students should also understand the general concepts of computer architectures and operating systems; in particular they should known how the CPU executes assembly programs and how the memory is organized. Finally, students should know regular expressions and finite automata.
 
 # Authors
 
