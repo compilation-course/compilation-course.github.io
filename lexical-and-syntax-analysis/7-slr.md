@@ -178,5 +178,5 @@ which accepts the word !
 
 # How to build an SLR(1) Parser 
 
-Now that we understand with an example how the SLR(1) operates. Let's show how to build one on the next video.:w
+Now that we understand with an example how the SLR(1) operates. Let's show how to build one on the next video.
 
