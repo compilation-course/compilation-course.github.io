@@ -5,7 +5,7 @@ nav_order: 2
 has_children: true
 ---
 
-# Introduction to the compiler course
+# Introduction to the compilation course
 
 ## Bibliographic Ressources
 

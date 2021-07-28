@@ -1,6 +1,6 @@
 ---
 layout: video
-title: Introduction to the compiler course
+title: Introduction to the compilation course
 ytid: sDLTsroe85E
 slides: 1-introduction.pdf
 parent: Introduction 

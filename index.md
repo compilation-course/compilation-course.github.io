@@ -36,4 +36,4 @@ this course was inspired.
 
 We'd also like to thank Akim Demaille and the LRDE team for the excellent
 [Tiger reference manual](https://www.lrde.epita.fr/~tiger/tiger.html) and for
-making freely available their compiler course.
+making freely available their compilation course.
