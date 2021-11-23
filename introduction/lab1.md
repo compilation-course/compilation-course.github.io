@@ -76,7 +76,7 @@ in
 end
 ```
 
-▶ [`read_unsigned.tig`] Complete the following program and save it in `read_unsigned.tig` file. The function `read_unsigned` reads a line from the _standard input_ (`stdin`). If the line contains only numerical characters it returns the number as a positive base-ten integer. Otherwise, it returns $$-1$$.
+▶ [`read_unsigned.tig`] Complete the following program and save it in `read_unsigned.tig` file. The function `read_unsigned` reads a line from the _standard input_ (`stdin`). If the line contains only numerical characters it returns the number as a positive base-ten integer. Otherwise, it returns $$-1$$. You should correctly handle the line termination character `\n`.
 
 The following primitives will be useful:
 
