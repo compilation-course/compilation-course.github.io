@@ -119,9 +119,11 @@ $ echo "1*2" | src/driver/dtiger --dump-ast --trace-lexer -
 Can you understand what is happening? Look for the string "invalid character" in the lexer file `src/parser/tiger_lexer.ll`. It looks like someone forgot to add a rule to recognize integers.
 
 ▶ First add an `INT` token in the parser. Look at `src/parser/tiger_parser.yy` after the comment starting with "Define tokens". The type of the token should be `int`, its name `INT`, and its comment `integer`.
+
 ▶ Add support for recognizing integers in the lexer. You should look at how this is implemented for `ID` tokens. First, add a rule for a regular expression matching integers. No need to worry about the minus sign; it is already handled in the parser.
 In the `flex` action for integers, use the function `strtol` to convert the matched text (`yytext`) to an integer and emit an `INT` token.
 You should ensure that the parsed integer is in the range of legal Tiger integers (the constant `TIGER_INT_MAX` has been defined for you), and signal a correctly placed error using `utils::error` if not.
+
 ▶ Ensure that you reject numbers with leading 0 as the Tiger language forbids them (but you must accept 0 of course).
 
 Now the lexer should recognize integers,
