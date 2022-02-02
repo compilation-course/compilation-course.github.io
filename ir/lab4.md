@@ -328,7 +328,7 @@ Loops
 ▶ Implement the visitor for `WhileLoop` without taking care
     of Tiger `break` statements at this time.
 
-▶ Implement the visitor for `Break`. You need to use modify
+▶ Implement the visitor for `Break`. You need to modify
     the `WhileLoop` and `ForLoop` visitors in order to
     associate the loop AST nodes with their exit blocks
     using the `loop_exit_bbs` map.
