@@ -19,11 +19,11 @@ $ docker pull pablooliveira/compil
 
 To run the image, if you are on a unix-like system run
 ```
-$ docker run -it -v "$(pwd)":/compil pablooliveira:compil /bin/bash
+$ docker run -it -v "$(pwd)":/compil pablooliveira/compil /bin/bash
 ```
 If instead you are on a windows system run
 ```
-$ docker run -it -v %cd%:/compil pablooliveira:compil /bin/bash
+$ docker run -it -v %cd%:/compil pablooliveira/compil /bin/bash
 ```
 
 Once inside the image you should move to the `/compil` directory where your host's local directory has been mounted.
