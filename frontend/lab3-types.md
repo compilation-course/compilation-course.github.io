@@ -100,11 +100,10 @@ The type checker must perform the following operations:
 - `Let` expressions have the same type as their last expression
   if they have one, otherwise they are `t_void`.
 - `VarDecl` nodes without an explicit type (in the `type_name` field) take their type from
-  their expression. This type cannot be `t_void` since a variable
-  is either an integer or a string.
-- `VarDecl` nodes with an explicit type given in the source
-  must check that the expression (if any) is compatible with this type,
-  which will become the type of the node.
+  their expression.
+- `VarDecl` nodes with an explicit type given in the source must check that the
+  expression (if any) is compatible with this type, which will become the type
+  of the node. This explicit type cannot be `t_void`.
 - `BinaryOperator` nodes must check that their arguments have
   types compatible with the operation and with each other, and
   set the resulting type.
