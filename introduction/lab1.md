@@ -54,7 +54,7 @@ is graded and machine corrected !
 
 ## Tiger Language
 
-We will familiarize ourselves with the Tiger language by writing a few programs. If in doubt check the [specifications of the Tiger language](https://www.lrde.epita.fr/~tiger/tiger.html)
+We will familiarize ourselves with the Tiger language by writing a few programs. If in doubt check the [specifications of the Tiger language](https://assignments.lrde.epita.fr/reference_manual/tiger_language_reference_manual/tiger_language_reference_manual.html)
 but remember that in these lectures we will not use and implement array and record types.
 
 ▶ [`hello.tig`] Write a Tiger program, `hello.tig`, that prints the string "Hello World!" followed by a new line character to the standard output.

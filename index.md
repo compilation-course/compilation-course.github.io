@@ -35,5 +35,5 @@ Compiler implementation_](https://www.cs.princeton.edu/~appel/modern/) on which
 this course was inspired.
 
 We'd also like to thank Akim Demaille and the LRDE team for the excellent
-[Tiger reference manual](https://www.lrde.epita.fr/~tiger/tiger.html) and for
+[Tiger reference manual](https://assignments.lrde.epita.fr/reference_manual/tiger_language_reference_manual/tiger_language_reference_manual.html) and for
 making freely available their compilation course.
