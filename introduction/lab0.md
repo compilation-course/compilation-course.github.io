@@ -101,7 +101,7 @@ To commit the files first add them in git with
 ```bash
 $ git add Makefile test.cc
 $ git status
-On branch master
+On branch main
 
 Initial commit
 
@@ -171,7 +171,7 @@ is no need to type all the numbers, the first are sufficient (except in case of
 conflict). Try !
 
 The different versions form a **branch** of versions.
-In git the main branch is usually called `master`.
+In git the main branch is usually called `main`.
 
 Git allows you to work on several branches at the same time, go back to
 previous versions of code, and many more things but that goes beyond the scope
@@ -190,7 +190,7 @@ Since you already clone your repository from gitlab-chps.ens.uvsq.fr; this serve
 To send your changes do,
 
 ```bash
-$ git push origin master
+$ git push origin main
 
 Counting objects: 3, done.
 Delta compression using up to 8 threads.
@@ -198,5 +198,5 @@ Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 271 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To http://pablo-oliveira@gitlab-chps.ens.uvsq.fr/coa/pablo-oliveira.git
-* [new branch]      master -> master
+* [new branch]      main -> main
 ```
