@@ -43,7 +43,7 @@ It is in this last mode that we will work in this course.
 To save your work between lab sessions we will
 use the server at [gitlab-chps.ens.uvsq.fr](http://gitlab-chps.ens.uvsq.fr).
 
-▶ An account with your university email `first.last@ens.uvsq.fr` has been created. The initial password is everything before the `@` in your email. For example, if your email is `first.last@ens.uvsq.fr`, you will use the password `first.last`.
+▶ An account with your university email `first.last@ens.uvsq.fr` has been created. You should have received an email with the initial password.
 
 ▶ Immediatly after logging change your password to secure your account. Click on the drop-down menu on the top-right, then go to `Preferences > Password`.
 
