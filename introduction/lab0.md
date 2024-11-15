@@ -185,7 +185,7 @@ To send your changes to another repository, you will need to use two commands:
 
 * `git push` sends your changes to another repository 
 
-Since you already clone your repository from gitlab-chps.ens.uvsq.fr; this server is already configure as the default push server.
+Since you already clone your repository from gitlab-chps.ens.uvsq.fr; this server is already configured as the default push server.
 
 To send your changes do,
 
