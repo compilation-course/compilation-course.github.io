@@ -93,7 +93,7 @@ $ git config --global user.email pablo.oliveira@uvsq.fr
 ```
 
 Now write a `test.cc` program that displays "Hello World!"
-on the standard output and a Makefile file to compile it with `clang++-3.9`.
+on the standard output and a Makefile file to compile it with `clang++-9`.
 Write your program in C++.
 
 To commit the files first add them in git with

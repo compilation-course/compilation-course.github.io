@@ -32,7 +32,7 @@ You can use `dtiger` to compile a Tiger program `test.tig` as follows,
 ```bash
 $ echo 'print("Hello World!\n")' > test.tig
 $ src/driver/dtiger -o test.o test.tig
-$ clang++-3.9 test.o src/runtime/posix/libruntime.a -o test
+$ clang++-9 test.o src/runtime/posix/libruntime.a -o test
 $ ./test
 Hello World!
 ```
