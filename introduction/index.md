@@ -9,4 +9,4 @@ has_children: true
 
 ## Bibliographic Ressources
 
-- [Full specifications of the Tiger language](https://assignments.lrde.epita.fr/reference_manual/tiger_language_reference_manual/tiger_language_reference_manual.html)
+- [Full specifications of the Tiger language](https://web.archive.org/web/20221225030918/https://www.lrde.epita.fr/~akim/ccmp/tiger.pdf)
