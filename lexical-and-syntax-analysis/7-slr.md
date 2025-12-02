@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Introduction to SLR(1) Parsers
-parent: Lexical and syntax analysis 
+title: Introduction to SLR Parsers
+parent: Lexical and syntax analysis
 mathjax: true
 nav_order: 3
 ---
@@ -36,26 +36,26 @@ The finite automaton has a set of accepting states. If at the end of the input,
 the automaton is in an accepting state, then the input is accepted. Otherwise,
 the input is rejected.
 
-# SLR(1) Parsers
+# SLR Parsers
 
 There are many different types of parsers for Context Free Grammars. In this
-course, we will concentrate only on one specific parser SLR(1), which is a
+course, we will concentrate only on one specific parser SLR, which is a
 simplified version of the LALR parser used by Bison. 
 
-SLR(1) belongs to the family of bottom-up parsers: that means that it builds a
+SLR belongs to the family of bottom-up parsers: that means that it builds a
 parse tree starting from the leafs and tries to reach the root start symbol.
 Because SLR is a bottom-up parse, it will use grammar rules on the other
 direction since it begins from the final word and tries to build the derivation
 backwards towards $$S$$.
 
-SLR(1) stands for **S**imple **L**eft-to-right **R**ightmost-derivation Parser with 1 symbol lookahead.
+SLR stands for **S**imple **L**eft-to-right **R**ightmost-derivation Parser with 1 symbol lookahead.
 Let's unpack that:
 
 - Left-to-right means that it reads the input symbol by symbol from left to right
 - Rightmost-derivation means that the parser will always apply grammars rules starting from the right. That is to say, rules will be applied to the symbols more recently read.
 - 1 lookahead, means that it looks only at the first character in the input to decide what action to take. (It can also look at the stack). 
 
-SLR(1) parsers use a PDA to parse context free grammars.
+SLR parsers use a PDA to parse context free grammars.
 At each step, the PDA can take two actions:
 
 - **shift**, which will read a symbol from input and push it to the stack
@@ -90,8 +90,8 @@ The first column, contains the states of the automaton. The initial state is 0.
 The first line, contains the different symbols (terminals and non terminals).
 Each cell in the table, describes the actions to take.
 
-Let us show how this SLR(1) would parse input $$id\ id\#$$.
-Initially, the input contains the word to parse and the stack contains the initial state (state 0). 
+Let us show how this SLR would parse input $$id\ id\#$$.
+Initially, the input contains the word to parse and the stack contains the initial state (state 0).
 
 ~~~
 Step 0:
@@ -175,8 +175,7 @@ The table tells us that for state 2 and symbol $$\#$$ we should shift to state 4
 which accepts the word !
 
 ***
+# How to build an SLR Parser
 
-# How to build an SLR(1) Parser 
-
-Now that we understand with an example how the SLR(1) operates. Let's show how to build one on the next video.
+Now that we understand with an example how the SLR operates. Let's show how to build one on the next video.
 
