@@ -40,7 +40,7 @@ the input is rejected.
 
 There are many different types of parsers for Context Free Grammars. In this
 course, we will concentrate only on one specific parser SLR, which is a
-simplified version of the LALR parser used by Bison. 
+simplified version of the LALR parser used by Bison.
 
 SLR belongs to the family of bottom-up parsers: that means that it builds a
 parse tree starting from the leafs and tries to reach the root start symbol.
@@ -81,9 +81,9 @@ The automata is represented by the following table,
 |   | id | #      | E |
 |---|----|--------|---|
 | 0 | s1 |        | 2 |
-| 1 | s1 | r2     | 3 |
+| 1 | s1 | r3     | 3 |
 | 2 |    | s4     |   |
-| 3 |    | r1     |   |
+| 3 |    | r2     |   |
 | 4 |accept|accept|accept|
 
 The first column, contains the states of the automaton. The initial state is 0.
@@ -124,9 +124,9 @@ input = [#]
 stack = [0 id 1 id 1]
 ~~~
 
-Here we look at the table for state 1 and symbol $$\#$$, the action is r2. This means to reduce by grammar rule 2.
+Here we look at the table for state 1 and symbol $$\#$$, the action is r3. This means to reduce by grammar rule 3.
 
-Grammar rule 2 is $$E \rightarrow id$$, we therefore remove the right-hand-side ($$id$$) from the stack and associated states; and replace it by the left-hand-side ($$E$$). Remember that in this bottom-up-parser we reverse grammar rules. 
+Grammar rule 3 is $$E \rightarrow id$$, we therefore remove the right-hand-side ($$id$$) from the stack and associated states; and replace it by the left-hand-side ($$E$$). Remember that in this bottom-up-parser we reverse grammar rules. 
 
 ~~~
 stack = [0 id 1 id 1]
@@ -147,8 +147,8 @@ input = [#]
 stack = [0 id 1 E 3]
 ~~~
 
-Here we look at the table for state 3 and symbol $$\#$$, the action is r1.
-Now we reduce by grammar rule 1, which is $$E \rightarrow id\ E$$.
+Here we look at the table for state 3 and symbol $$\#$$, the action is r2.
+Now we reduce by grammar rule 2, which is $$E \rightarrow id\ E$$.
 We replace the right-hand-side by the left-hand-side.
 
 ~~~
