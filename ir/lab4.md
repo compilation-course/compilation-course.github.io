@@ -42,8 +42,7 @@ $ git commit -m "Import dragon-tiger for lab4"
 ```
 
 This lab is the first one which requires the headers and libraries for LLVM. You
-can usually install them from a `llvm-dev` package. You must use at least version
-3.9 and at most version 9.0 of LLVM. Let us build the project:
+can install them from the `llvm-18-dev` package (or use the course container). You must use LLVM version 18. Let us build the project:
 
 ```bash
 $ cd dragon-tiger
@@ -126,18 +125,18 @@ of an integer), and will output Intel assembly code corresponding to the compute
 is it currently executing onto.
 
 ``` bash
-$ src/driver/dtiger -i --dump-ir test.tig | opt -mem2reg | llc
+$ src/driver/dtiger -i --dump-ir test.tig | opt -passes=mem2reg | llc
 […intel assembly output…]
 ```
 
 If you are more familiar with ARM Thumb-2 instruction set, you can obtain it by using
 `llc -march=arm -mcpu=cortex-m4` for example.
 
-You can combine this with `opt -mem2reg` to see the effect of removing the unneeded
+You can combine this with `opt -passes=mem2reg` to see the effect of removing the unneeded
 `alloca` IR instructions:
 
 ``` bash
-$ src/driver/dtiger -i --dump-ir test.tig | opt -mem2reg | llc -march=arm -mcpu=cortex-m4
+$ src/driver/dtiger -i --dump-ir test.tig | opt -passes=mem2reg | llc -march=arm -mcpu=cortex-m4
 […thumb2 assembly output…]
 ```
 
@@ -205,7 +204,7 @@ entry:
   br label %body
 
 body:                                             ; preds = %entry
-  store i32 1, i32* %a
+  store i32 1, ptr %a
   ret i32 0
 }
 ```
@@ -217,6 +216,9 @@ is stored at address `%a`.
 
 ▶ Implement the visitor for `Identifier` nodes.
 
+*Note (LLVM Opaque Pointers):* In modern LLVM, all pointers are opaque (`ptr`). Therefore, `Builder.CreateLoad` explicitly requires the element type being loaded as its first argument:
+`Builder.CreateLoad(llvm_type(type), address_of(id))` (or `Builder.getInt32Ty()` for integer expressions).
+
 The following code
 
 ```
@@ -226,7 +228,7 @@ let var a := 1 in print_int(a) end
 should now also contain something like:
 
 ```
-  %0 = load i32, i32* %a
+  %0 = load i32, ptr %a
   call void @__print_int(i32 %0)
 ```
 
@@ -244,9 +246,9 @@ let var a := 1 in a := 3; print_int(a) end
 should now also contain something like:
 
 ```
-  store i32 1, i32* %a
-  store i32 3, i32* %a
-  %0 = load i32, i32* %a
+  store i32 1, ptr %a
+  store i32 3, ptr %a
+  %0 = load i32, ptr %a
   call void @__print_int(i32 %0)
 ```
 

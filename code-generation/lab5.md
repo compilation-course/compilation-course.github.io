@@ -59,9 +59,9 @@ A way to do it would be:
   `current_function_decl`) and a `sl` value representing the address of the
   current frame (found in `frame`).
 - Then, for every level you need to go up, replace `sl` by a load of the
-  first field of the frame it currently points to (using `Builder.CreateStructGEP()`
-  and `Builder.CreateLoad()`, and `fun` by the declaration of its parent. You
-  are not one level up.
+  first field of the frame it currently points to (using `Builder.CreateStructGEP(frame_type[fun], sl, 0)`
+  and `Builder.CreateLoad(frame_type[fun]->getElementType(0), ...)`), and `fun` by the declaration of its parent. You
+  are now one level up.
 - When this is done, you can return a pair made of the frame type of `fun`
   (found in the `frame_type` map) and the current static link from `sl`, which represents
   a succession of loads.

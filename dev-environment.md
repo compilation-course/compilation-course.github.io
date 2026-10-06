@@ -10,12 +10,13 @@ The easiest way to work on the computer assignments is to use a virtual image th
 
 ## Using the virtual-image
 
-First, you will need to install [Docker](https://docs.docker.com/get-docker/) on your system.
+First, you will need to install [Docker](https://docs.docker.com/get-docker/) or [Podman](https://podman.io/) on your system.
 
 Then, retrieve the course's docker image with
 ```
 $ docker pull pablooliveira/compil
 ```
+*(If using Podman, replace `docker` with `podman`)*.
 
 To run the image, if you are on a unix-like system run
 ```
@@ -31,8 +32,8 @@ Once inside the image you should move to the `/compil` directory where your host
 
 ## Configuring the development environment from scratch
 
-If you want to configure the development environment from scratch, we recommend that you use a Debian/Ubuntu like distribution. Ensure that you use a 64bit distribution. Please install the following dependencies. Replace `[version]` with the llvm version included in your distribution, the labs in this course have been tested with version going from 3.9 to 9.0.
+If you want to configure the development environment from scratch, we recommend that you use a Debian/Ubuntu-like distribution (such as Ubuntu 24.04 LTS). Ensure that you use a 64bit distribution. The labs in this course require LLVM 18. Please install the following dependencies:
 
 ```
-$ sudo apt-get install build-essential flex bison libboost-program-options-dev llvm-[version]-dev clang-[version] llvm-[version]-tools libz-dev autotools-dev automake autoconf libtool gdb git wget
+$ sudo apt-get install build-essential flex bison libboost-program-options-dev llvm-18-dev clang-18 llvm-18-tools clang-format-18 python3 python3-yaml libz-dev autotools-dev automake autoconf libtool gdb git wget
 ```

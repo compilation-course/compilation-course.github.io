@@ -90,7 +90,7 @@ adjusting `src/Makefile.am` (don't forget to put `parser` first in
 
 You might also want to propagate your evaluator code although this will not be needed.
 
-**Warning: the automated tests for this lab are most likely to fail if you do not use your own code (except if by chance you use the same LLVM version as the tester does, which is right now LLVM 7.0.1). The pre-built working compiler parts are only useful to run tests locally. Fortunately, only simple function calls will be used (no frames, no assignments, etc.), so your labs 4 and 5 do not need to be 100% completed.**
+**Warning: the automated tests for this lab are most likely to fail if you do not use your own code (except if by chance you use the same LLVM version as the tester does, which is right now LLVM 18). The pre-built working compiler parts are only useful to run tests locally. Fortunately, only simple function calls will be used (no frames, no assignments, etc.), so your labs 4 and 5 do not need to be 100% completed.**
 
 What is the runtime?
 --------------------
