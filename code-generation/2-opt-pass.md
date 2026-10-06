@@ -12,7 +12,9 @@ nav_order: 6
 #include "llvm/IR/Constants.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/IR/Module.h"
-#include "llvm/Pass.h"
+#include "llvm/IR/PassManager.h"
+#include "llvm/Passes/PassBuilder.h"
+#include "llvm/Passes/PassPlugin.h"
 #include "llvm/Support/raw_ostream.h"
 
 #include <set>
@@ -20,11 +22,7 @@ nav_order: 6
 using namespace llvm;
 
 namespace {
-struct DTigerOpts : public ModulePass {
-  static char ID;
-
-  DTigerOpts() : ModulePass(ID) {}
-
+struct DTigerOpts : public PassInfoMixin<DTigerOpts> {
   // Return the function __not if it is used in the module
   Function *find_not_function(Module &M) {
     for (auto &fun : M.getFunctionList())
@@ -41,7 +39,6 @@ struct DTigerOpts : public ModulePass {
   // and removes the call.
   bool replace_constant_call(User *use, Module &M, const DataLayout &DL) {
     // Retrieve the CallSite of the use
-
     CallInst *call = dyn_cast<CallInst>(use);
     // Check if it is a direct call instruction
     if (!call)
@@ -49,8 +46,7 @@ struct DTigerOpts : public ModulePass {
     errs() << "Found call to function __not\n";
 
     // Since the typechecker has run, we assume that there is exactly one
-    // argument
-    // on the call to __not
+    // argument on the call to __not
     assert(call->arg_begin() != nullptr);
     Value *arg = call->arg_begin()->get();
 
@@ -64,8 +60,8 @@ struct DTigerOpts : public ModulePass {
 
     // Record all uses of the call result
     std::set<Instruction *> WorkList;
-    for (auto use : call->users()) {
-      if (auto i = dyn_cast<Instruction>(use)) {
+    for (auto u : call->users()) {
+      if (auto i = dyn_cast<Instruction>(u)) {
         WorkList.insert(i);
       }
     }
@@ -80,8 +76,8 @@ struct DTigerOpts : public ModulePass {
       Instruction *i = *WorkList.begin();
       WorkList.erase(WorkList.begin());
       if (Constant *c = ConstantFoldInstruction(i, DL)) {
-        for (auto use : i->users())
-          WorkList.insert(cast<Instruction>(use));
+        for (auto u : i->users())
+          WorkList.insert(cast<Instruction>(u));
         i->replaceAllUsesWith(c);
         i->eraseFromParent();
       }
@@ -90,7 +86,7 @@ struct DTigerOpts : public ModulePass {
     return true;
   }
 
-  bool runOnModule(Module &M) {
+  PreservedAnalyses run(Module &M, ModuleAnalysisManager &AM) {
     const DataLayout &DL = M.getDataLayout();
 
     bool modified = false, did_replace;
@@ -98,13 +94,15 @@ struct DTigerOpts : public ModulePass {
     // Check if the function __not is used in the module
     Function *not_fun = find_not_function(M);
     if (not_fun == nullptr)
-      return false;
+      return PreservedAnalyses::all();
 
     // If __not is referenced, check every use for constant calls
     // that we could optimize
     do {
+      errs() << "Entering replace loop\n";
       did_replace = false;
-      for (const auto user : not_fun->users()) {
+      SmallVector<User *, 8> Users(not_fun->users());
+      for (const auto user : Users) {
         if (replace_constant_call(user, M, DL)) {
           did_replace = true;
           errs() << "Found and replaced constant call\n";
@@ -115,12 +113,24 @@ struct DTigerOpts : public ModulePass {
       // to enable successive folds such as not(not(0)) -> 0
     } while (did_replace);
 
-    return modified;
+    return modified ? PreservedAnalyses::none() : PreservedAnalyses::all();
   }
 };
 } // namespace
 
-char DTigerOpts::ID = 0;
-static RegisterPass<DTigerOpts>
-    X("dtigeropts", "Optimization pass for dragon tiger", false, false);
+extern "C" LLVM_ATTRIBUTE_WEAK ::llvm::PassPluginLibraryInfo
+llvmGetPassPluginInfo() {
+  return {LLVM_PLUGIN_API_VERSION, "dtigeropts", LLVM_VERSION_STRING,
+          [](PassBuilder &PB) {
+            PB.registerPipelineParsingCallback(
+                [](StringRef Name, ModulePassManager &MPM,
+                   ArrayRef<PassBuilder::PipelineElement>) {
+                  if (Name == "dtigeropts") {
+                    MPM.addPass(DTigerOpts());
+                    return true;
+                  }
+                  return false;
+                });
+          }};
+}
 ```
