@@ -29,7 +29,7 @@ Retrieve the lab code and commit it to your git with the following commands,
 ```bash
 $ mkdir lab3
 $ cd lab3
-$ wget -qO- www.sifflez.org/lectures/compil/lab3/dragon-tiger.tar.gz | tar zxv
+$ wget -qO- https://compilation-course.github.io/labs/lab3/dragon-tiger.tar.gz | tar zxv
 $ git add -f dragon-tiger
 $ git commit -m "Import dragon-tiger for lab3" dragon-tiger
 ```

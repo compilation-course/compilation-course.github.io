@@ -23,7 +23,7 @@ Execute the following commands at the top of your repository:
 ```bash
 $ mkdir lab2
 $ cd lab2
-$ wget -qO- www.sifflez.org/lectures/compil/lab2/dragon-tiger.tar.gz | tar zxv
+$ wget -qO- https://compilation-course.github.io/labs/lab2/dragon-tiger.tar.gz | tar zxv
 $ git add dragon-tiger
 $ git commit -m "Import dragon-tiger for lab2" dragon-tiger
 ```
