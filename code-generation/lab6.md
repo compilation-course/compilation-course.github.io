@@ -18,7 +18,6 @@ Retrieve the lab code and commit it to your git with the following commands,
 $ mkdir lab6
 $ cd lab6
 $ curl <some link, see below> | tar zxvf -
-)
 $ git add -f dragon-tiger/
 $ git commit -m "Import dragon-tiger for lab6"
 ```
