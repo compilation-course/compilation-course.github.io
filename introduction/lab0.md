@@ -38,34 +38,19 @@ serves as a meeting point and facilitates exchanges between developers.
 
 It is in this last mode that we will work in this course.
 
-## Creating an account on gitlab-chps.ens.uvsq.fr
-
-To save your work between lab sessions we will
-use the server at [gitlab-chps.ens.uvsq.fr](http://gitlab-chps.ens.uvsq.fr).
-
-▶ An account with your university email `first.last@ens.uvsq.fr` has been created. You should have received an email with the initial password.
-
-▶ Immediatly after logging change your password to secure your account. Click on the drop-down menu on the top-right, then go to `Preferences > Password`.
-
-▶ When you log on the server, you will see that a project (`coa/firstname-lastname`) has been created for you.
-
-▶ (optional) To clone and push on your repository without typing your password each time, create and add an ssh key to your account. First look how to create an ssh-key on your system. Then click on the drop-down menu, then choose `Settings > SSH Keys` to upload your public key pair.
 
 ## Cloning the repository
 
-▶ To start working on your git repository, you'll have to clone it. Log into
-  [gitlab-chps.ens.uvsq.fr](http://gitlab-chps.ens.uvsq.fr) and copy the address of
-  the repository. Select the protocol (HTTP or SSH) on the drop-down menu at
-  the center of the interface (do not choose SSH unless you have added an SSH
-  key on your profile). Then copy the address that is located nearby.
+▶ To start working on your git repository, you'll have to clone it. Copy the
+address of the repository. Select the protocol (HTTP or SSH) on the drop-down
+menu at the center of the interface (do not choose SSH unless you have added an
+SSH key on your profile). Then copy the address that is located nearby.
 
 ▶ Now go to the terminal and type the following commands:
 
 ```bash
-    # WARNING: please replace pablo-oliveira by your own name
-
     # clone the repository 
-    $ git clone http://gitlab-chps.ens.uvsq.fr/coa/pablo-oliveira.git 
+    $ git clone http://<your repository address>
     warning: You appear to have cloned an empty repository.
     Checking connectivity... done.
 
@@ -185,7 +170,8 @@ To send your changes to another repository, you will need to use two commands:
 
 * `git push` sends your changes to another repository 
 
-Since you already clone your repository from gitlab-chps.ens.uvsq.fr; this server is already configured as the default push server.
+Since you already cloned your repository from a remote server; this server is
+already configured as the default push server.
 
 To send your changes do,
 
@@ -197,6 +183,6 @@ Delta compression using up to 8 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 271 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To http://pablo-oliveira@gitlab-chps.ens.uvsq.fr/coa/pablo-oliveira.git
+To http://<remote server>/coa/pablo-oliveira.git
 * [new branch]      main -> main
 ```
